@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Pesanan - TechStore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TechStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-smartphone.html">Smartphone</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-laptop.html">Laptop</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-accessories.html">Aksesoris</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+        </ul>
+        <div class="d-flex gap-3">
+          <a href="wishlist.html" class="btn btn-outline-primary">❤️ Wishlist</a>
+          <a href="cart.html" class="btn btn-outline-primary">🛒 Keranjang</a>
+          <a href="profile.html" class="btn btn-primary">Profil</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://via.placeholder.com/100x100/667eea/fff?text=User" class="rounded-circle mb-3" alt="Profile">
+            <h5>Budi Santoso</h5>
+            <p class="text-muted mb-0">budi@email.com</p>
+          </div>
+        </div>
+        <div class="list-group mt-3">
+          <a href="profile.html" class="list-group-item list-group-item-action">Profil Saya</a>
+          <a href="order-history.html" class="list-group-item list-group-item-action active">Pesanan Saya</a>
+          <a href="wishlist.html" class="list-group-item list-group-item-action">Wishlist</a>
+          <a href="index.html" class="list-group-item list-group-item-action text-danger">Logout</a>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <h4 class="mb-4">Riwayat Pesanan</h4>
+
+        <div class="order-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <h6 class="mb-1">Order #TS2026100123</h6>
+              <small class="text-muted">25 Oktober 2026</small>
+            </div>
+            <span class="status-badge status-success">Selesai</span>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/80x80/667eea/fff?text=S24" alt="Product" class="me-3" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">Samsung Galaxy S24 Ultra</h6>
+              <p class="text-muted mb-1">Titanium Black, 256GB</p>
+              <p class="mb-0">1x Rp 19.999.000</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+            <div>
+              <strong>Total Pembayaran: </strong>
+              <span class="text-danger">Rp 19.999.000</span>
+            </div>
+            <div>
+              <a href="order-detail.html" class="btn btn-outline-primary btn-sm me-2">Lihat Detail</a>
+              <a href="product-detail.html" class="btn btn-primary btn-sm">Beli Lagi</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <h6 class="mb-1">Order #TS2026100089</h6>
+              <small class="text-muted">18 Oktober 2026</small>
+            </div>
+            <span class="status-badge status-info">Dikirim</span>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/80x80/FF6B6B/fff?text=WH" alt="Product" class="me-3" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">Sony WH-1000XM5 Headphone</h6>
+              <p class="text-muted mb-1">Black</p>
+              <p class="mb-0">1x Rp 4.199.000</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/80x80/00D2D3/fff?text=Air" alt="Product" class="me-3" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">Apple AirPods Pro 2nd Gen</h6>
+              <p class="text-muted mb-1">White</p>
+              <p class="mb-0">1x Rp 3.999.000</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+            <div>
+              <strong>Total Pembayaran: </strong>
+              <span class="text-danger">Rp 8.198.000</span>
+            </div>
+            <div>
+              <a href="order-detail.html" class="btn btn-outline-primary btn-sm me-2">Lacak Paket</a>
+              <a href="order-detail.html" class="btn btn-outline-secondary btn-sm">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <h6 class="mb-1">Order #TS2026090567</h6>
+              <small class="text-muted">5 September 2026</small>
+            </div>
+            <span class="status-badge status-success">Selesai</span>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/80x80/4ECDC4/fff?text=Mac" alt="Product" class="me-3" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">MacBook Air M3 13" 8GB/256GB</h6>
+              <p class="text-muted mb-1">Midnight</p>
+              <p class="mb-0">1x Rp 17.999.000</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+            <div>
+              <strong>Total Pembayaran: </strong>
+              <span class="text-danger">Rp 17.999.000</span>
+            </div>
+            <div>
+              <a href="order-detail.html" class="btn btn-outline-primary btn-sm me-2">Lihat Detail</a>
+              <a href="product-detail.html" class="btn btn-primary btn-sm">Beli Lagi</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <h6 class="mb-1">Order #TS2026080234</h6>
+              <small class="text-muted">12 Agustus 2026</small>
+            </div>
+            <span class="status-badge status-warning">Dibatalkan</span>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/80x80/7B68EE/fff?text=iPad" alt="Product" class="me-3" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+            <div class="flex-grow-1">
+              <h6 class="mb-1">iPad Pro 11" M4 128GB WiFi</h6>
+              <p class="text-muted mb-1">Space Gray</p>
+              <p class="mb-0">1x Rp 14.999.000</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+            <div>
+              <strong>Total: </strong>
+              <span class="text-muted">Rp 14.999.000</span>
+            </div>
+            <div>
+              <a href="order-detail.html" class="btn btn-outline-secondary btn-sm me-2">Lihat Detail</a>
+              <a href="product-detail.html" class="btn btn-primary btn-sm">Beli Lagi</a>
+            </div>
+          </div>
+        </div>
+
+        <nav class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>TechStore</h5>
+          <p>Toko elektronik terpercaya dengan produk berkualitas dan harga terjangkau.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Kategori</h5>
+          <ul class="list-unstyled">
+            <li><a href="category-smartphone.html">Smartphone</a></li>
+            <li><a href="category-laptop.html">Laptop</a></li>
+            <li><a href="category-tablet.html">Tablet</a></li>
+            <li><a href="category-accessories.html">Aksesoris</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Informasi</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="terms.html">Syarat & Ketentuan</a></li>
+            <li><a href="privacy-policy.html">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Hubungi Kami</h5>
+          <p>Email: info@techstore.com<br>Phone: +62 21 1234 5678<br>WhatsApp: +62 812 3456 7890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechStore. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

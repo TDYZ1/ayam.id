@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya - TechStore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TechStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-smartphone.html">Smartphone</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-laptop.html">Laptop</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-accessories.html">Aksesoris</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+        </ul>
+        <div class="d-flex gap-3">
+          <a href="wishlist.html" class="btn btn-outline-primary">❤️ Wishlist</a>
+          <a href="cart.html" class="btn btn-outline-primary">🛒 Keranjang</a>
+          <a href="profile.html" class="btn btn-primary">Profil</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://via.placeholder.com/100x100/667eea/fff?text=User" class="rounded-circle mb-3" alt="Profile">
+            <h5>Budi Santoso</h5>
+            <p class="text-muted mb-0">budi@email.com</p>
+          </div>
+        </div>
+        <div class="list-group mt-3">
+          <a href="profile.html" class="list-group-item list-group-item-action active">Profil Saya</a>
+          <a href="order-history.html" class="list-group-item list-group-item-action">Pesanan Saya</a>
+          <a href="wishlist.html" class="list-group-item list-group-item-action">Wishlist</a>
+          <a href="index.html" class="list-group-item list-group-item-action text-danger">Logout</a>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header bg-white">
+            <h5 class="mb-0">Informasi Profil</h5>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Nama Lengkap</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="Budi Santoso">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" value="budi@email.com">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Nomor Telepon</label>
+                <div class="col-sm-9">
+                  <input type="tel" class="form-control" value="081234567890">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                <div class="col-sm-9">
+                  <select class="form-select">
+                    <option>Laki-laki</option>
+                    <option>Perempuan</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Tanggal Lahir</label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" value="1990-05-15">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-9 offset-sm-3">
+                  <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header bg-white">
+            <h5 class="mb-0">Alamat Pengiriman</h5>
+          </div>
+          <div class="card-body">
+            <div class="border rounded p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <strong>Rumah</strong>
+                  <span class="badge bg-primary ms-2">Utama</span>
+                </div>
+                <div>
+                  <a href="#" class="text-primary me-2">Edit</a>
+                  <a href="#" class="text-danger">Hapus</a>
+                </div>
+              </div>
+              <p class="mb-1"><strong>Budi Santoso</strong> | 081234567890</p>
+              <p class="mb-0 text-muted">Jl. Sudirman No. 123, RT 01/RW 05<br>Kebayoran Baru, Jakarta Selatan, DKI Jakarta<br>12190</p>
+            </div>
+            <div class="border rounded p-3">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div><strong>Kantor</strong></div>
+                <div>
+                  <a href="#" class="text-primary me-2">Edit</a>
+                  <a href="#" class="text-danger">Hapus</a>
+                </div>
+              </div>
+              <p class="mb-1"><strong>Budi Santoso</strong> | 081234567890</p>
+              <p class="mb-0 text-muted">Gedung Plaza Indonesia, Lantai 15<br>Jl. MH Thamrin, Jakarta Pusat, DKI Jakarta<br>10350</p>
+            </div>
+            <button class="btn btn-outline-primary mt-3">+ Tambah Alamat Baru</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>TechStore</h5>
+          <p>Toko elektronik terpercaya dengan produk berkualitas dan harga terjangkau.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Kategori</h5>
+          <ul class="list-unstyled">
+            <li><a href="category-smartphone.html">Smartphone</a></li>
+            <li><a href="category-laptop.html">Laptop</a></li>
+            <li><a href="category-tablet.html">Tablet</a></li>
+            <li><a href="category-accessories.html">Aksesoris</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Informasi</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="terms.html">Syarat & Ketentuan</a></li>
+            <li><a href="privacy-policy.html">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Hubungi Kami</h5>
+          <p>Email: info@techstore.com<br>Phone: +62 21 1234 5678<br>WhatsApp: +62 812 3456 7890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechStore. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

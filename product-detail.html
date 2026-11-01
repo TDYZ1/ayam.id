@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk - TechStore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TechStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-smartphone.html">Smartphone</a></li>
+          <li class="nav-item"><a class="nav-link" href="category-laptop.html">Laptop</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="cart.html" class="btn btn-outline-primary">Keranjang</a>
+          <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB (Navigasi Halaman) -->
+  <div class="container my-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="category-smartphone.html">Smartphone</a></li>
+        <li class="breadcrumb-item active">Samsung Galaxy S24 Ultra</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- DETAIL PRODUK -->
+  <div class="container my-5">
+    <div class="row">
+      
+      <!-- Kolom Kiri: Gambar Produk -->
+      <div class="col-lg-5">
+        <img src="https://via.placeholder.com/500x500/0066cc/fff?text=Samsung+S24+Ultra" class="product-detail-img mb-3" alt="Samsung Galaxy S24 Ultra">
+        <div class="d-flex gap-2">
+          <img src="https://via.placeholder.com/80x80/0066cc/fff?text=1" class="product-thumbnail" alt="Gambar 1">
+          <img src="https://via.placeholder.com/80x80/0066cc/fff?text=2" class="product-thumbnail" alt="Gambar 2">
+          <img src="https://via.placeholder.com/80x80/0066cc/fff?text=3" class="product-thumbnail" alt="Gambar 3">
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Informasi Produk -->
+      <div class="col-lg-7">
+        <h1 class="mb-3">Samsung Galaxy S24 Ultra</h1>
+        <div class="product-rating mb-3">★★★★★ 4.9 (128 Reviews)</div>
+        
+        <div class="product-detail-price">
+          Rp 19.999.000 
+          <span class="product-price-old">Rp 24.999.000</span>
+        </div>
+
+        <div class="mb-3">
+          <span class="badge bg-success">Stok Tersedia</span>
+          <span class="badge bg-warning text-dark ms-2">Diskon 20%</span>
+        </div>
+
+        <hr>
+
+        <!-- Pilihan Warna -->
+        <div class="mb-4">
+          <h5>Pilih Warna</h5>
+          <div class="d-flex gap-2">
+            <span class="color-swatch" style="background-color: #000;" title="Black"></span>
+            <span class="color-swatch" style="background-color: #8B7355;" title="Gray"></span>
+            <span class="color-swatch" style="background-color: #E8E3D5;" title="White"></span>
+          </div>
+        </div>
+
+        <!-- Pilihan Kapasitas -->
+        <div class="mb-4">
+          <h5>Pilih Kapasitas</h5>
+          <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="storage" id="storage1" checked>
+            <label class="btn btn-outline-primary" for="storage1">256GB</label>
+
+            <input type="radio" class="btn-check" name="storage" id="storage2">
+            <label class="btn btn-outline-primary" for="storage2">512GB</label>
+
+            <input type="radio" class="btn-check" name="storage" id="storage3">
+            <label class="btn btn-outline-primary" for="storage3">1TB</label>
+          </div>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="d-flex gap-3 mb-4">
+          <a href="cart.html" class="btn btn-primary btn-lg flex-grow-1">Tambah ke Keranjang</a>
+          <a href="wishlist.html" class="btn btn-outline-primary btn-lg">Wishlist</a>
+        </div>
+
+        <a href="checkout.html" class="btn btn-success btn-lg w-100">Beli Sekarang</a>
+      </div>
+    </div>
+
+    <!-- TABS: Deskripsi, Spesifikasi, Review -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#description">Deskripsi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#specifications">Spesifikasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#reviews">Review</a>
+          </li>
+        </ul>
+
+        <div class="tab-content p-4 border border-top-0">
+          
+          <!-- Tab Deskripsi -->
+          <div class="tab-pane fade show active" id="description">
+            <h4>Deskripsi Produk</h4>
+            <p>Samsung Galaxy S24 Ultra adalah flagship smartphone terbaru dari Samsung dengan teknologi AI terdepan, layar 6.8 inci, kamera 200MP, dan performa luar biasa.</p>
+            <h5 class="mt-4">Fitur Unggulan:</h5>
+            <ul>
+              <li>S Pen Built-in - Tulis dan gambar dengan presisi tinggi</li>
+              <li>Galaxy AI - Fitur AI canggih untuk produktivitas</li>
+              <li>200MP Camera - Kamera flagship berkualitas profesional</li>
+              <li>5000mAh Battery - Baterai besar dengan fast charging</li>
+            </ul>
+          </div>
+
+          <!-- Tab Spesifikasi -->
+          <div class="tab-pane fade" id="specifications">
+            <h4 class="mb-4">Spesifikasi Lengkap</h4>
+            <table class="spec-table">
+              <tr>
+                <td>Layar</td>
+                <td>6.8" Dynamic AMOLED 2X, 3120 x 1440 pixels, 120Hz</td>
+              </tr>
+              <tr>
+                <td>Prosesor</td>
+                <td>Snapdragon 8 Gen 3</td>
+              </tr>
+              <tr>
+                <td>RAM</td>
+                <td>12 GB</td>
+              </tr>
+              <tr>
+                <td>Storage</td>
+                <td>256GB / 512GB / 1TB</td>
+              </tr>
+              <tr>
+                <td>Kamera Belakang</td>
+                <td>200MP + 50MP + 12MP + 10MP</td>
+              </tr>
+              <tr>
+                <td>Kamera Depan</td>
+                <td>12MP</td>
+              </tr>
+              <tr>
+                <td>Baterai</td>
+                <td>5000 mAh, Fast Charging 45W</td>
+              </tr>
+              <tr>
+                <td>OS</td>
+                <td>Android 14, One UI 6.1</td>
+              </tr>
+              <tr>
+                <td>Berat</td>
+                <td>232 gram</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Tab Review -->
+          <div class="tab-pane fade" id="reviews">
+            <h4 class="mb-4">Customer Reviews</h4>
+            
+            <div class="review-card">
+              <div class="d-flex justify-content-between mb-2">
+                <strong>Budi Santoso</strong>
+                <span class="text-muted">15 Oktober 2026</span>
+              </div>
+              <div class="review-rating">★★★★★</div>
+              <p>Smartphone terbaik yang pernah saya punya! Kameranya luar biasa, baterainya awet seharian penuh.</p>
+            </div>
+
+            <div class="review-card">
+              <div class="d-flex justify-content-between mb-2">
+                <strong>Siti Nurhaliza</strong>
+                <span class="text-muted">12 Oktober 2026</span>
+              </div>
+              <div class="review-rating">★★★★★</div>
+              <p>Kualitas foto dan video sangat bagus, cocok untuk content creator. Pengiriman cepat, packing rapi!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>TechStore</h5>
+          <p>Toko elektronik terpercaya dengan produk berkualitas dan harga terjangkau.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Kategori</h5>
+          <ul class="list-unstyled">
+            <li><a href="category-smartphone.html">Smartphone</a></li>
+            <li><a href="category-laptop.html">Laptop</a></li>
+            <li><a href="category-tablet.html">Tablet</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Informasi</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Hubungi Kami</h5>
+          <p>Email: info@techstore.com<br>Phone: +62 21 1234 5678</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechStore. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

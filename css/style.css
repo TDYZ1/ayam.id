@@ -1,0 +1,359 @@
+/* ===== WARNA DASAR ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* ===== NAVIGASI ===== */
+.navbar {
+  background-color: white;
+  border-bottom: 2px solid #eee;
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* ===== HERO SECTION (Banner Utama) ===== */
+.hero-section {
+  background-color: #0066cc;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 18px;
+}
+
+/* ===== SECTION TITLE (Judul Bagian) ===== */
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* ===== CARD KATEGORI ===== */
+.category-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===== CARD PRODUK ===== */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-card .card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+/* Harga Produk */
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #dc3545;
+  margin-bottom: 5px;
+}
+
+.product-price-old {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 5px;
+}
+
+/* Rating Bintang */
+.product-rating {
+  color: #ffc107;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Badge Diskon */
+.badge-discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* ===== TOMBOL ===== */
+.btn-primary {
+  background-color: #0066cc;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+}
+
+.btn-outline-primary {
+  border: 2px solid #0066cc;
+  color: #0066cc;
+  background-color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0066cc;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}
+
+.footer h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid #555;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* ===== BREADCRUMB (Navigasi Halaman) ===== */
+.breadcrumb {
+  background-color: transparent;
+  padding: 15px 0;
+}
+
+/* ===== SIDEBAR FILTER ===== */
+.filter-sidebar {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.filter-sidebar h5,
+.filter-sidebar h6 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ===== DETAIL PRODUK ===== */
+.product-detail-img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.product-thumbnail {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-thumbnail:hover {
+  border-color: #0066cc;
+}
+
+.product-detail-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #dc3545;
+  margin: 20px 0;
+}
+
+/* Pilihan Warna */
+.color-swatch {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.color-swatch:hover {
+  border-color: #0066cc;
+}
+
+/* Tabel Spesifikasi */
+.spec-table {
+  width: 100%;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.spec-table td {
+  padding: 12px 8px;
+}
+
+.spec-table td:first-child {
+  font-weight: bold;
+  width: 30%;
+  color: #666;
+}
+
+/* ===== REVIEW ===== */
+.review-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.review-rating {
+  color: #ffc107;
+}
+
+/* ===== KERANJANG ===== */
+.cart-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+}
+
+/* ===== FORM ===== */
+.form-control:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+/* ===== CARD AUTENTIKASI (Login/Register) ===== */
+.auth-card {
+  max-width: 450px;
+  margin: 50px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* ===== PESANAN ===== */
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.order-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Status Badge */
+.status-badge {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status-success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-warning {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+
+.status-info {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+/* ===== RESPONSIF (Mobile) ===== */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 28px;
+  }
+  
+  .hero-section p {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .product-detail-price {
+    font-size: 24px;
+  }
+}
