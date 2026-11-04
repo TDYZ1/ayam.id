@@ -1,54 +1,102 @@
 # Penjelasan Code HTML - Teddy
 
-## 1. cart.html
+## 1. cart.html - Halaman Keranjang Belanja
 
-### Struktur Utama
-- **Navbar**: Standard navbar TechStore
-- Heading "Keranjang Belanja"
+### Fungsi Halaman
+Menampilkan produk yang sudah ditambahkan ke keranjang, user bisa ubah quantity, hapus produk, input kode promo, dan lanjut ke checkout.
 
-### Layout 2 Kolom
+### Layout yang Digunakan
+- **Layout 2 kolom**: Kolom kiri lebih besar (col-lg-8) untuk daftar item keranjang, kolom kanan (col-lg-4) untuk ringkasan belanja dan promo
 
-**Kolom Kiri (col-lg-8)** - Cart Items:
+### Komponen HTML
+- **Cart item**: Setiap produk ditampilkan dalam row dengan gambar, info, quantity selector, harga, dan tombol hapus
+- **Quantity selector**: Input group dengan tombol minus (-), input number, tombol plus (+)
+- **Ringkasan belanja**: Card berisi subtotal, diskon, ongkir, total, dan tombol checkout
+- **Input promo**: Input field dengan tombol "Gunakan"
 
-**Cart Item Structure** (class cart-item):
-- Row align-items-center dengan 5 kolom:
-  1. **col-md-2**: Gambar produk 100x100px
-  2. **col-md-4**: Info produk
-     - h5 nama produk
-     - 2 paragraf text-muted untuk varian/spesifikasi
-  3. **col-md-2 text-center**: Quantity selector
-     - input-group dengan max-width 120px (inline style)
-     - Button "-" (btn-sm btn-outline-secondary)
-     - Input text center (form-control-sm) dengan value
-     - Button "+" (btn-sm btn-outline-secondary)
-  4. **col-md-3 text-end**: Harga (h5 text-danger mb-0)
-  5. **col-md-1 text-end**: Tombol hapus (✕ text-danger)
+### Bootstrap yang Digunakan
+- **Grid**: `row`, `col-lg-8`, `col-lg-4`, `col-md-2/3/4` untuk layout item
+- **Card**: `card`, `card-body`, `card-title` untuk ringkasan dan promo
+- **Input group**: `input-group`, `input-group-text` untuk quantity selector
+- **Form**: `form-control`, `form-control-sm` (input kecil)
+- **Button**: `btn-sm`, `btn-outline-secondary` (minus/plus), `btn-primary`, `btn-outline-primary`, `btn-success`
+- **Flexbox**: `d-flex`, `align-items-center` untuk layout item horizontal
+- **Text**: `text-center`, `text-end`, `text-danger` (harga & hapus), `text-success` (ongkir gratis), `text-muted`
+- **Spacing**: `mb-3`, `mt-3`, `mb-0` untuk jarak
+- **Width**: `w-100` (tombol full width), inline style `max-width: 120px` untuk quantity input
 
-**3 Item di Cart**:
-1. Samsung Galaxy S24 Ultra - Titanium Black 256GB - Rp 19.999.000
-2. Sony WH-1000XM5 Headphone - Black - Rp 4.199.000
-3. MacBook Air M3 13" - 8GB/256GB - Rp 17.999.000
+### Cara Implementasi
 
-**Kolom Kanan (col-lg-4)** - 2 Cards:
+**1. Cart Item**
+```html
+<div class="cart-item mb-3">
+  <div class="row align-items-center">
+    <div class="col-md-2">
+      <img src="..." width="100" height="100">
+    </div>
+    <div class="col-md-4">
+      <h5>Samsung Galaxy S24 Ultra</h5>
+      <p class="text-muted mb-0">Warna: Titanium Black</p>
+      <p class="text-muted">Kapasitas: 256GB</p>
+    </div>
+    <div class="col-md-2 text-center">
+      <div class="input-group" style="max-width: 120px;">
+        <button class="btn btn-sm btn-outline-secondary">-</button>
+        <input type="text" class="form-control form-control-sm text-center" value="1">
+        <button class="btn btn-sm btn-outline-secondary">+</button>
+      </div>
+    </div>
+    <div class="col-md-3 text-end">
+      <h5 class="text-danger mb-0">Rp 19.999.000</h5>
+    </div>
+    <div class="col-md-1 text-end">
+      <button class="btn text-danger">×</button>
+    </div>
+  </div>
+</div>
+```
 
-**Card 1 - Ringkasan Belanja**:
-- h5 card-title "Ringkasan Belanja"
-- Divider (hr)
-- d-flex justify-content-between lines:
-  - Total Harga (3 barang): Rp 42.197.000
-  - Diskon: - Rp 8.801.000 (text-danger)
-  - Ongkir: Gratis (text-success)
-- Divider (hr)
-- Total Pembayaran (strong, text-danger): Rp 42.197.000
-- 2 buttons:
-  - "Checkout" (btn-primary w-100 mb-2) link ke checkout.html
-  - "Lanjut Belanja" (btn-outline-secondary w-100) link ke products.html
+**2. Ringkasan Belanja**
+```html
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Ringkasan Belanja</h5>
+    <hr>
+    <div class="d-flex justify-content-between mb-2">
+      <span>Total Harga (3 barang)</span>
+      <span>Rp 42.197.000</span>
+    </div>
+    <div class="d-flex justify-content-between mb-2">
+      <span>Diskon</span>
+      <span class="text-danger">- Rp 8.801.000</span>
+    </div>
+    <div class="d-flex justify-content-between mb-2">
+      <span>Ongkir</span>
+      <span class="text-success">Gratis</span>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between mb-3">
+      <strong>Total Pembayaran</strong>
+      <strong class="text-danger">Rp 42.197.000</strong>
+    </div>
+    <a href="checkout.html" class="btn btn-primary w-100 mb-2">Checkout</a>
+    <a href="products.html" class="btn btn-outline-secondary w-100">Lanjut Belanja</a>
+  </div>
+</div>
+```
 
-**Card 2 - Kode Promo** (mt-3):
-- h6 "Punya Kode Promo?"
-- input-group:
-  - Input text (placeholder "Masukkan kode")
-  - Button "Gunakan" (btn-outline-primary)
+**3. Card Kode Promo**
+```html
+<div class="card mt-3">
+  <div class="card-body">
+    <h6>Punya Kode Promo?</h6>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Masukkan kode">
+      <button class="btn btn-outline-primary">Gunakan</button>
+    </div>
+  </div>
+</div>
+```
 
 ---
 
@@ -75,53 +123,101 @@ Kategori Accessories harus menampilkan produk seperti:
 
 ---
 
-## 3. about.html
+## 2. about.html - Halaman Tentang Kami
 
-### Struktur Utama
-- Navbar dengan menu "Tentang" active
+### Fungsi Halaman
+Menampilkan informasi tentang TechStore: deskripsi perusahaan, statistik, keunggulan, visi & misi.
 
-### Section 1 - Hero About (row mb-5)
+### Layout yang Digunakan
+- **Section 1 - Hero**: 2 kolom (text di kiri, gambar di kanan)
+- **Section 2 - Statistics**: 4 kolom berisi angka statistik
+- **Section 3 - Why Choose Us**: 6 fitur dalam grid 3 kolom
+- **Section 4 - Visi & Misi**: 2 kolom dengan background abu
 
-**Kolom Kiri (col-lg-6)**:
-- h1 "Tentang TechStore"
-- p.lead: Tagline tentang toko
-- 2 paragraf deskripsi perusahaan (didirikan 2020, 100K+ pelanggan, brand partner)
+### Komponen HTML
+- **Lead text**: Paragraf pembuka dengan ukuran lebih besar menggunakan class `lead`
+- **Stat cards**: Card tanpa border berisi angka besar dan label
+- **Feature cards**: Card dengan emoji icon, heading, dan deskripsi
+- **Background section**: Div dengan background `bg-light` dan padding besar
 
-**Kolom Kanan (col-lg-6)**:
-- Gambar 600x400px (img-fluid rounded) placeholder
+### Bootstrap yang Digunakan
+- **Grid**: `row`, `col-lg-6`, `col-md-3`, `col-md-4` untuk berbagai section
+- **Card**: `card`, `card-body`, `border-0` (hilangkan border), `h-100` (tinggi sama)
+- **Image**: `img-fluid rounded` untuk gambar responsif dengan sudut melengkung
+- **Text**: `text-center`, `text-primary` (warna biru untuk angka), `text-muted` (deskripsi)
+- **Lead**: `lead` untuk paragraf tagline yang lebih besar
+- **Background**: `bg-light` untuk section dengan background abu
+- **Spacing**: `mb-5`, `mb-4`, `mb-3`, `p-5` (padding besar)
+- **Rounded**: `rounded` untuk sudut section melengkung
 
-### Section 2 - Statistics (row text-center mb-5)
+### Cara Implementasi
 
-4 cards (col-md-3 mb-4) dengan border-0 h-100:
-- **Card body** text-center:
-  - h2 angka (text-primary mb-3): 100K+, 5000+, 50+, 24/7
-  - h5 label: Pelanggan Puas, Produk Tersedia, Brand Partner, Customer Support
+**1. Hero Section**
+```html
+<div class="row mb-5">
+  <div class="col-lg-6">
+    <h1>Tentang TechStore</h1>
+    <p class="lead">Toko elektronik terpercaya sejak 2020</p>
+    <p>TechStore adalah toko elektronik online...</p>
+    <p>Kami menyediakan produk original...</p>
+  </div>
+  <div class="col-lg-6">
+    <img src="..." class="img-fluid rounded">
+  </div>
+</div>
+```
 
-### Section 3 - Why Choose Us (row mb-5)
+**2. Statistics Section**
+```html
+<div class="row text-center mb-5">
+  <div class="col-md-3 mb-4">
+    <div class="card border-0 h-100">
+      <div class="card-body text-center">
+        <h2 class="text-primary mb-3">100K+</h2>
+        <h5>Pelanggan Puas</h5>
+      </div>
+    </div>
+  </div>
+  <!-- repeat 3x untuk statistik lain -->
+</div>
+```
 
-**Heading**: "Mengapa Memilih TechStore?" (text-center)
+**3. Why Choose Us (dengan emoji)**
+```html
+<div class="row mb-5">
+  <div class="col-12 mb-4">
+    <h2 class="text-center">Mengapa Memilih TechStore?</h2>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <div class="mb-3" style="font-size: 3rem;">✓</div>
+        <h5>Produk 100% Original</h5>
+        <p class="text-muted">Semua produk dijamin original...</p>
+      </div>
+    </div>
+  </div>
+  <!-- repeat 5x untuk fitur lain: 🚚 💳 🔒 ⚡ 💬 -->
+</div>
+```
+Emoji dibuat besar dengan inline style `font-size: 3rem`.
 
-6 cards (col-md-4 mb-4) dengan h-100:
-- **Card body text-center**:
-  - Div emoji (mb-3) dengan inline style font-size 3rem: ✓, 🚚, 💳, 🔒, ⚡, 💬
-  - h5 judul fitur
-  - p.text-muted penjelasan
-
-**6 Fitur**:
-1. ✓ Produk 100% Original
-2. 🚚 Gratis Ongkir
-3. 💳 Pembayaran Mudah
-4. 🔒 Transaksi Aman
-5. ⚡ Pengiriman Cepat
-6. 💬 Customer Support 24/7
-
-### Section 4 - Vision & Mission (row bg-light p-5 rounded)
-
-**Centered content**:
-- h2 "Visi & Misi Kami" (text-center mb-4)
-- Row dengan 2 kolom (col-md-6 mb-4):
-  - **Visi**: h4 + paragraf
-  - **Misi**: h4 + paragraf
+**4. Visi & Misi**
+```html
+<div class="row bg-light p-5 rounded">
+  <div class="col-12">
+    <h2 class="text-center mb-4">Visi & Misi Kami</h2>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h4>Visi</h4>
+    <p>Menjadi platform e-commerce...</p>
+  </div>
+  <div class="col-md-6 mb-4">
+    <h4>Misi</h4>
+    <p>Menyediakan produk berkualitas...</p>
+  </div>
+</div>
+```
 
 ---
 
@@ -257,3 +353,5 @@ Kategori Audio harus menampilkan:
 **Impact**: User tidak bisa browse kategori Accessories, Gaming, dan Audio dengan benar karena menampilkan produk yang salah (smartphone semua).
 
 **Fix Needed**: Ganti konten produk di 3 file tersebut dengan produk yang sesuai kategorinya + update title, breadcrumb, heading, dan navbar active state.
+
+

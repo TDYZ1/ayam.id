@@ -1,241 +1,336 @@
 # Penjelasan Code HTML - Jackie
 
-## 1. privacy-policy.html
+## 1. privacy-policy.html - Halaman Kebijakan Privasi
 
-### Struktur Utama
-- **DOCTYPE & Head**: HTML5 dengan Bootstrap 5.3.0, charset UTF-8, responsive viewport
-- **Navbar**: Sticky-top navbar dengan brand "TechStore", menu horizontal, tombol Wishlist/Keranjang/Login
+### Fungsi Halaman
+Halaman ini menampilkan kebijakan privasi TechStore, menjelaskan bagaimana data pengguna dikumpulkan dan digunakan.
 
-### Container Centered (col-lg-8 mx-auto)
-- Heading "Kebijakan Privasi" + tanggal update terakhir (text-muted)
-- 13 section dengan h4 heading dan paragraf/list:
+### Layout yang Digunakan
+- **Container terpusat**: Menggunakan `col-lg-8 mx-auto` agar konten tidak terlalu lebar dan berada di tengah layar
+- **Layout 1 kolom**: Seluruh konten text disusun vertikal dari atas ke bawah
 
-**Section Kebijakan Privasi**:
-1. **Pendahuluan**: Komitmen privasi TechStore
-2. **Informasi yang Kami Kumpulkan**: Unordered list 4 jenis data (Pribadi, Transaksi, Teknis, Interaksi) dengan tag `<strong>` untuk label
-3. **Cara Kami Mengumpulkan Informasi**: List 3 poin (form registrasi, cookies, pihak ketiga)
-4. **Penggunaan Informasi**: Paragraf intro + list 6 poin tujuan penggunaan data
-5. **Pembagian Informasi**: Paragraf "tidak menjual data" + list 3 kategori pembagian (Penyedia Layanan, Kewajiban Hukum, Transfer Bisnis) dengan label strong
-6. **Keamanan Data**: Paragraf intro + list 4 langkah keamanan (enkripsi SSL, server aman, akses terbatas, audit berkala)
-7. **Cookies**: Paragraf intro + list 3 kegunaan cookies + paragraf catatan tentang disable cookies
-8. **Hak Anda**: Paragraf intro + list 5 hak user (akses, perbaiki, hapus, tolak marketing, tarik persetujuan) + paragraf kontak email
-9. **Penyimpanan Data**: Paragraf durasi penyimpanan dan penghapusan data
-10. **Privasi Anak-Anak**: Paragraf kebijakan usia minimal 17 tahun
-11. **Tautan ke Situs Pihak Ketiga**: Disclaimer tanggung jawab
-12. **Perubahan Kebijakan Privasi**: Paragraf hak update kebijakan
-13. **Kontak**: Paragraf intro + list 3 kontak (email privacy@, telepon, alamat fisik)
+### Komponen HTML
+- **Tag `<h1>` dan `<h4>`**: Judul utama dan sub-judul untuk setiap section
+- **Tag `<p>`**: Paragraf teks biasa
+- **Tag `<ul>` dan `<li>`**: List bertanda bullet untuk daftar informasi
+- **Tag `<strong>`**: Membuat text jadi tebal untuk penekanan
+- **Alert box**: Kotak info berwarna hijau di akhir halaman (class `alert alert-success`)
 
-- Alert box (alert-success) dengan komitmen TechStore
+### Bootstrap yang Digunakan
+- **Grid**: `container`, `row`, `col-lg-8`, `mx-auto` (margin auto kiri-kanan untuk center)
+- **Spacing**: `my-5` (margin atas-bawah), `mb-3` (margin bawah)
+- **Text**: `text-muted` (text abu-abu untuk tanggal update)
+- **Alert**: `alert alert-success` (kotak notifikasi hijau)
 
-### Footer
-Standard 4 kolom footer (sama dengan halaman lain)
-
----
-
-## 2. order-history.html
-
-### Layout 2 Kolom
-
-**Sidebar Kiri (col-md-3)** - Profile Menu:
-- Card dengan gambar profil (rounded-circle 100x100px), nama "Budi Santoso", email
-- List group menu: Profil Saya, Pesanan Saya (active), Wishlist, Logout (text-danger)
-
-**Content Kanan (col-md-9)**:
-- Heading "Riwayat Pesanan"
-- 4 order card dengan struktur sama:
-
-**Order Card** (class order-card):
-- **Header** (d-flex justify-content-between):
-  - Order ID (h6) + tanggal kecil (text-muted)
-  - Status badge dengan class dinamis (status-success/status-info/status-warning)
-- **Product Items** (d-flex align-items-center):
-  - Gambar produk 80x80px (inline style width, height, object-fit, border-radius)
-  - Nama produk (h6), varian (text-muted), harga per item
-  - Bisa multiple items dalam 1 order
-- **Footer** (border-top, d-flex justify-content-between):
-  - Total Pembayaran dengan warna (text-danger untuk paid, text-muted untuk cancelled)
-  - Button group (btn-sm): "Lihat Detail", "Beli Lagi", "Lacak Paket" (tergantung status)
-
-**Status Badge Variants**:
-- `status-success` untuk "Selesai" (hijau)
-- `status-info` untuk "Dikirim" (biru)
-- `status-warning` untuk "Dibatalkan" (kuning)
-
-**4 Order yang Ditampilkan**:
-1. Order #TS2026100123 - Selesai - Samsung Galaxy S24 Ultra (Rp 19.999.000)
-2. Order #TS2026100089 - Dikirim - 2 items: Sony WH-1000XM5 + AirPods Pro (Rp 8.198.000)
-3. Order #TS2026090567 - Selesai - MacBook Air M3 (Rp 17.999.000)
-4. Order #TS2026080234 - Dibatalkan - iPad Pro (Rp 14.999.000)
-
-- Pagination 3 halaman di bawah
+### Cara Implementasi
+1. Buat struktur HTML dasar dengan navbar di atas
+2. Buat container tengah dengan `<div class="container my-5">`
+3. Buat row dan kolom terpusat dengan `<div class="row"><div class="col-lg-8 mx-auto">`
+4. Tulis 13 section, masing-masing pakai `<h4>` untuk judul dan `<ul>` untuk list
+5. Tambahkan alert box di akhir dengan class `alert alert-success`
 
 ---
 
-## 3. order-detail.html
+## 2. order-history.html - Halaman Riwayat Pesanan
 
-### Header
-- d-flex justify-content-between: Heading "Detail Pesanan" + tombol "Kembali" (btn-outline-secondary)
+### Fungsi Halaman
+Menampilkan daftar pesanan yang pernah dibuat user, lengkap dengan status pengiriman dan detail produk.
 
-### Layout 2 Kolom
+### Layout yang Digunakan
+- **Layout 2 kolom**: Sidebar kiri (menu profil) dan konten kanan (daftar pesanan)
+- **Sidebar**: `col-md-3` untuk menu navigasi profil
+- **Konten**: `col-md-9` untuk menampilkan card-card pesanan
 
-**Kolom Kiri (col-lg-8)**:
+### Komponen HTML
+- **Card profil**: Foto bulat user, nama, dan email di sidebar
+- **List group**: Menu navigasi dengan item yang bisa diklik (Profil, Pesanan, Wishlist, Logout)
+- **Order card**: Card khusus untuk setiap pesanan dengan header, isi, dan footer
+- **Badge status**: Label berwarna untuk status pesanan (Selesai/Dikirim/Dibatalkan)
+- **Button group**: Kumpulan tombol kecil untuk aksi (Lihat Detail, Beli Lagi, Lacak Paket)
 
-**Card 1 - Status Pengiriman**:
-- Header: Order ID (h5) + tanggal detail + status badge
-- **Timeline Vertical** dengan 5 tahap menggunakan inline style:
-  - Setiap tahap: d-flex dengan icon (rounded-circle bg-success 30x30px), vertical line (bg-success 2px width, 40px height, margin-left 14px)
-  - Tahap: Pesanan Selesai → Paket Diterima → Dalam Pengiriman → Pesanan Diproses → Pesanan Dibuat
-  - Setiap tahap ada timestamp (text-muted)
-  - Checkmark (✓) dalam circle untuk completed steps
+### Bootstrap yang Digunakan
+- **Grid**: `row`, `col-md-3`, `col-md-9` untuk layout 2 kolom
+- **Card**: `card`, `card-body` untuk kotak profil dan pesanan
+- **List group**: `list-group`, `list-group-item`, `list-group-item-action`, `active` untuk menu
+- **Flexbox**: `d-flex`, `justify-content-between`, `align-items-center` untuk atur posisi elemen
+- **Badge**: `badge` dengan warna custom (status-success, status-info, status-warning)
+- **Button**: `btn`, `btn-sm`, `btn-primary`, `btn-outline-secondary`
+- **Image**: `rounded-circle` untuk foto profil bulat
+- **Text**: `text-muted` (abu-abu), `text-danger` (merah untuk harga/logout)
+- **Pagination**: `pagination`, `page-item`, `page-link` untuk navigasi halaman
 
-**Card 2 - Produk yang Dibeli**:
-- Card header: "Produk yang Dibeli"
-- Product item: d-flex dengan gambar 100x100px, info produk (nama, varian, qty x harga), total di kanan (text-danger)
-- Border-bottom pada item
-- Summary section:
-  - Subtotal
-  - Ongkir dengan label (text-success "Gratis")
-  - Biaya Admin
-  - Total Pembayaran (strong, text-danger)
-
-**Kolom Kanan (col-lg-4)**:
-
-**Card 1 - Alamat Pengiriman**:
-- Nama (strong), telepon, alamat lengkap 3 baris (text-muted) dengan `<br>` tag
-
-**Card 2 - Metode Pembayaran**:
-- Metode (strong): "Transfer Bank BCA"
-- Status bayar (text-muted) dengan timestamp
-
-**Card 3 - Nomor Resi**:
-- Ekspedisi (strong): "JNE Regular"
-- Nomor resi dalam `<code>` tag: JNE1234567890123
-- Tombol "Lacak Paket" (btn-outline-primary btn-sm w-100)
+### Cara Implementasi
+1. Buat row dengan 2 kolom: `<div class="row">`
+2. Kolom kiri (sidebar): buat card profil + list group menu
+3. Kolom kanan: buat heading "Riwayat Pesanan"
+4. Loop untuk setiap pesanan: buat card dengan 3 bagian (header, produk, footer)
+5. Header pesanan pakai `d-flex justify-content-between` agar ID/tanggal di kiri, status badge di kanan
+6. Bagian produk pakai `d-flex` agar gambar dan info produk sejajar horizontal
+7. Footer pesanan pakai `d-flex justify-content-between` agar total di kiri, tombol di kanan
+8. Tambahkan pagination di bawah untuk navigasi halaman
 
 ---
 
-## 4. login.html
+## 3. order-detail.html - Halaman Detail Pesanan
 
-### Form Login (card auth-card)
-Centered card dengan class auth-card:
-- Heading "Login ke TechStore" (text-center)
-- Form dengan 2 input field:
-  1. **Email atau Nomor Telepon**: Text input (bukan email type untuk fleksibilitas)
-  2. **Password**: Password input
-- **Checkbox & Link row** (d-flex justify-content-between):
-  - Checkbox "Ingat Saya" (form-check-input)
-  - Link "Lupa Password?" (text-decoration-none)
-- Tombol "Login" (btn-primary w-100) link ke profile.html
-- Text "Belum punya akun? Daftar Sekarang" (link ke register.html)
-- **Divider** (hr my-4)
-- **Social Login** (d-grid gap-2):
-  - Button "Login dengan Google" (btn-outline-secondary)
-  - Button "Login dengan Facebook" (btn-outline-secondary)
+### Fungsi Halaman
+Menampilkan detail lengkap dari 1 pesanan: timeline pengiriman, produk yang dibeli, alamat pengiriman, metode pembayaran, dan nomor resi.
 
-### Class auth-card
-Custom class untuk styling centered login/register form
+### Layout yang Digunakan
+- **Layout 2 kolom**: Kolom kiri lebih besar (col-lg-8) untuk timeline dan produk, kolom kanan (col-lg-4) untuk info pengiriman dan pembayaran
+- **Timeline vertikal**: Menampilkan progress pengiriman dari bawah ke atas
 
----
+### Komponen HTML
+- **Timeline**: Dibuat manual pakai div dengan circle dan garis vertikal
+- **Card**: Untuk grouping informasi (timeline, produk, alamat, pembayaran, resi)
+- **Tag `<code>`**: Untuk menampilkan nomor resi dengan font monospace
+- **Tag `<br>`**: Untuk pisah baris alamat dan info lainnya
 
-## 5. index.html
+### Bootstrap yang Digunakan
+- **Grid**: `row`, `col-lg-8`, `col-lg-4` untuk layout 2 kolom
+- **Card**: `card`, `card-header`, `card-body`
+- **Flexbox**: `d-flex`, `justify-content-between` untuk header dan summary
+- **Button**: `btn-outline-secondary` (tombol Kembali), `btn-outline-primary` (Lacak Paket)
+- **Badge**: `badge bg-success` untuk status pesanan
+- **Text**: `text-muted` (abu-abu), `text-danger` (merah untuk harga), `text-success` (hijau untuk gratis ongkir)
+- **Border**: `border-bottom` untuk garis pemisah item produk
+- **Spacing**: `mb-3`, `mt-3`, `mb-0` untuk jarak antar elemen
 
-### Hero Section
-- **hero-section** class dengan gradient/background
-- Container dengan:
-  - h1: "Selamat Datang di TechStore"
-  - Paragraf tagline
-  - CTA button "Belanja Sekarang" (btn-light btn-lg) link ke products.html
+### Cara Implementasi Timeline Vertikal
+1. Setiap step timeline pakai `d-flex` untuk taruh icon dan text sejajar
+2. Icon: buat bulatan (`border-radius: 50%`) dengan background hijau, ukuran 30x30px, centang (✓) di dalamnya
+3. Garis vertikal: div dengan `width: 2px`, `height: 40px`, background hijau, posisi di bawah icon (margin-left 14px)
+4. Text: taruh di sebelah kanan icon dengan info tahap dan timestamp
+5. Susun dari atas ke bawah: Selesai → Diterima → Dikirim → Diproses → Dibuat
 
-### Section Kategori Produk
-- Heading "Kategori Produk" (class section-title)
-- Grid 3 kolom (col-md-4, row g-4)
-- 3 kategori card (class category-card):
-  - Wrapped dalam `<a>` dengan inline style `text-decoration: none; color: inherit;`
-  - Gambar placeholder 400x200px
-  - Card body text-center dengan h5 nama kategori
-- **Kategori**: Smartphone, Laptop, Tablet
-
-### Section Produk Unggulan
-- Heading "Produk Unggulan" (class section-title)
-- Grid 4 kolom (col-md-3, row g-4)
-- 4 product card (sama struktur seperti products.html):
-  - Badge discount (absolute position top-left)
-  - Gambar 300x220px
-  - Card body: nama (h5), rating bintang, harga + harga coret, tombol "Lihat Detail" (w-100 mt-2)
-- **Produk**: Samsung S24 Ultra (-20%), iPhone 15 Pro Max (-15%), MacBook Air M3 (-25%), Sony WH-1000XM5 (-30%)
-
-### Navbar
-- Menu "Home" dengan class `active`
-- Brand "ayam.id" (bukan TechStore - inconsistency dalam file)
+### Cara Implementasi Ringkasan Harga
+1. List item dengan `d-flex justify-content-between` agar label di kiri, nilai di kanan
+2. Subtotal, ongkir, biaya admin dengan text biasa
+3. Total Pembayaran pakai `<strong>` dan `text-danger` agar menonjol
 
 ---
 
-## 6. faq.html
+## 4. login.html - Halaman Login
 
-### Container Centered (col-lg-8 mx-auto)
-- Heading "Frequently Asked Questions (FAQ)" (text-center mb-5)
-- 5 kategori FAQ dengan h4 heading masing-masing
+### Fungsi Halaman
+Form login untuk user masuk ke akun mereka dengan email/telepon dan password, atau pakai login sosial media.
 
-### Struktur FAQ dengan HTML `<details>` Element
-Setiap FAQ menggunakan native HTML details/summary:
-- **`<details>`** tag (mb-3)
-- **`<summary>`** dengan class `p-3 bg-light rounded` dan inline style `cursor: pointer;` berisi pertanyaan dalam `<strong>`
-- Konten jawaban dalam div `p-3 border border-top-0 rounded-bottom` berisi paragraf dan/atau list
+### Layout yang Digunakan
+- **Layout centered**: Card form berada di tengah layar (class `auth-card`)
+- **Layout 1 kolom**: Form disusun vertikal dari atas ke bawah
 
-**5 Kategori FAQ**:
+### Komponen HTML
+- **Form**: Tag `<form>` untuk input data login
+- **Input text**: Untuk email/nomor telepon
+- **Input password**: Untuk password (text otomatis disembunyikan jadi titik-titik)
+- **Checkbox**: "Ingat Saya" agar user tidak perlu login lagi
+- **Link**: "Lupa Password?" untuk reset password
+- **Divider**: Garis horizontal `<hr>` sebagai pemisah antara login biasa dan sosial media
+- **Button**: Tombol login utama dan tombol sosial media
 
-**1. Pemesanan & Pembayaran** (3 FAQ):
-- Cara memesan (ordered list 6 langkah)
-- Metode pembayaran (unordered list 5 metode: Bank Transfer, Kartu Kredit, E-Wallet, Cicilan, COD)
-- Pembatalan pesanan (paragraf penjelasan)
+### Bootstrap yang Digunakan
+- **Card**: `card`, `card-body` untuk kotak form
+- **Form**: `form-label`, `form-control` untuk label dan input field
+- **Form check**: `form-check`, `form-check-input`, `form-check-label` untuk checkbox
+- **Button**: `btn-primary` (biru untuk login utama), `btn-outline-secondary` (border abu-abu untuk sosmed)
+- **Flexbox**: `d-flex justify-content-between` untuk baris checkbox dan link lupa password
+- **Grid**: `d-grid gap-2` untuk tombol sosmed (full width dengan jarak)
+- **Text**: `text-center` untuk center heading dan text "Belum punya akun"
+- **Spacing**: `mb-3` (margin bawah), `my-4` (margin atas-bawah), `w-100` (lebar 100%)
+- **Decoration**: `text-decoration-none` untuk hilangkan garis bawah link
 
-**2. Pengiriman** (3 FAQ):
-- Waktu pengiriman (list 4 opsi: Same Day, JNE Express, Regular, Luar Jawa)
-- Gratis ongkir (paragraf: minimal Rp 500.000)
-- Cara melacak pesanan (list 3 cara)
-
-**3. Produk & Garansi** (3 FAQ):
-- Produk original (paragraf: 100% original, tidak KW)
-- Masa garansi (list 3 kategori: Smartphone 1 tahun, Laptop 1-2 tahun, Aksesoris 6 bulan-1 tahun)
-- Cara klaim garansi (paragraf instruksi)
-
-**4. Retur & Pengembalian** (2 FAQ):
-- Retur/tukar barang (list 3 kondisi dengan durasi 7 hari + paragraf syarat)
-- Proses refund (paragraf: 3-7 hari kerja)
-
-**5. Akun & Keamanan** (3 FAQ):
-- Cara mendaftar (paragraf step-by-step)
-- Reset password (paragraf instruksi)
-- Keamanan data (paragraf tentang enkripsi SSL)
-
-### CTA Card
-- Card bg-light text-center di bawah FAQ
-- Heading h5, paragraf, tombol "Hubungi Kami" (btn-primary) link ke contact.html
-
-### Note
-Brand inconsistency: navbar brand "ayam.id" tapi title dan footer "TechStore"
+### Cara Implementasi
+1. Buat container dengan card centered menggunakan class custom `auth-card`
+2. Buat heading "Login ke TechStore" dengan class `text-center`
+3. Buat form dengan 2 input: email/telepon (type="text" untuk fleksibel) dan password (type="password")
+4. Buat row dengan `d-flex justify-content-between` berisi checkbox "Ingat Saya" di kiri dan link "Lupa Password" di kanan
+5. Tambahkan tombol "Login" dengan `btn-primary w-100` agar full width
+6. Tambahkan text dan link ke halaman register
+7. Tambahkan garis pemisah `<hr class="my-4">`
+8. Buat container `d-grid gap-2` berisi 2 tombol sosmed dengan icon
 
 ---
 
-## Komponen Bootstrap yang Digunakan
+## 5. index.html - Halaman Beranda (Homepage)
 
-- **Layout**: Container, row, col-* (responsive grid)
-- **Cards**: card, card-header, card-body
-- **Navbar**: navbar, navbar-toggler, navbar-collapse (sticky-top)
-- **Badges**: badge bg-success/warning/primary
-- **Buttons**: btn (primary/outline/sm/lg), btn-group
-- **Forms**: form-control, form-label, form-check, form-select
-- **List group**: list-group, list-group-item, list-group-item-action, active
-- **Alert**: alert, alert-success, alert-info
-- **Utilities**: d-flex, justify-content-between, text-center, text-muted, mb-*, mt-*, p-*, gap-*, w-100
-- **Pagination**: pagination, page-item, page-link
-- **Native HTML**: `<details>` dan `<summary>` untuk accordion FAQ
+### Fungsi Halaman
+Halaman utama yang pertama dilihat user, menampilkan hero banner, kategori produk, dan produk unggulan.
 
-## Custom Classes
+### Layout yang Digunakan
+- **Hero section**: Banner besar di atas dengan background dan tombol CTA
+- **Grid 3 kolom**: Untuk menampilkan kategori produk
+- **Grid 4 kolom**: Untuk menampilkan produk unggulan
+
+### Komponen HTML
+- **Hero section**: Div besar dengan heading, tagline, dan tombol "Belanja Sekarang"
+- **Card kategori**: Card yang bisa diklik (wrapped dalam tag `<a>`) dengan gambar dan nama kategori
+- **Card produk**: Card produk dengan badge diskon, gambar, nama, rating, harga, dan tombol
+
+### Bootstrap yang Digunakan
+- **Hero section**: Custom class `hero-section` dengan container, heading besar, dan button
+- **Grid**: `row`, `col-md-4` untuk 3 kategori, `col-md-3` untuk 4 produk, `g-4` untuk jarak antar card
+- **Card**: `card`, `card-body` untuk kotak kategori dan produk
+- **Badge**: `badge bg-danger` untuk label diskon di pojok kiri atas produk
+- **Button**: `btn-light btn-lg` untuk hero CTA, `btn-primary w-100` untuk tombol produk
+- **Text**: `text-center` untuk center text, `section-title` untuk heading section
+- **Image**: `img-fluid` untuk gambar responsif
+- **Position**: `position-relative` pada card, `position-absolute` pada badge diskon
+- **Spacing**: `my-5`, `mb-4` untuk jarak antar section
+
+### Cara Implementasi
+1. **Hero Section**: Buat div dengan class `hero-section`, isi dengan container berisi h1, paragraf tagline, dan tombol besar "Belanja Sekarang"
+2. **Section Kategori**: 
+   - Buat heading "Kategori Produk" dengan class `section-title text-center`
+   - Buat row dengan `g-4` untuk jarak
+   - Loop 3 kategori: buat card wrapped dalam tag `<a>`, gambar di atas, text nama di bawah (center)
+3. **Section Produk Unggulan**:
+   - Buat heading "Produk Unggulan"
+   - Buat row dengan 4 kolom `col-md-3`
+   - Setiap produk: card dengan badge diskon (position absolute), gambar, nama, rating bintang, harga dengan harga coret, tombol "Lihat Detail"
+
+### Catatan Khusus
+- Rating bintang dibuat pakai karakter unicode ★ (bintang penuh) dan ☆ (bintang kosong)
+- Badge diskon pakai `position-absolute` dengan koordinat `top: 10px; left: 10px`
+- Harga coret pakai tag `<del>` atau `<s>` dengan class `text-muted`
+
+---
+
+## 6. faq.html - Halaman FAQ (Pertanyaan yang Sering Ditanyakan)
+
+### Fungsi Halaman
+Menampilkan daftar pertanyaan dan jawaban umum seputar layanan TechStore (cara pesan, pembayaran, pengiriman, garansi, dll).
+
+### Layout yang Digunakan
+- **Container terpusat**: `col-lg-8 mx-auto` agar konten tidak terlalu lebar
+- **Accordion native**: Menggunakan tag HTML5 `<details>` dan `<summary>` untuk buka-tutup pertanyaan
+
+### Komponen HTML
+- **Tag `<details>`**: Container untuk setiap pertanyaan yang bisa dibuka/ditutup
+- **Tag `<summary>`**: Bagian yang diklik untuk buka/tutup (berisi pertanyaan)
+- **Heading `<h4>`**: Judul kategori FAQ (5 kategori)
+- **List `<ol>` dan `<ul>`**: Untuk jawaban berupa langkah-langkah atau daftar
+- **Tag `<strong>`**: Untuk menebalkan text penting
+
+### Bootstrap yang Digunakan
+- **Grid**: `container`, `row`, `col-lg-8 mx-auto`
+- **Background**: `bg-light` untuk background summary
+- **Border**: `border`, `border-top-0`, `rounded`, `rounded-bottom` untuk styling jawaban
+- **Spacing**: `mb-3` untuk jarak antar FAQ, `mb-5` untuk jarak kategori, `p-3` untuk padding
+- **Card**: `card card-body` untuk CTA box di akhir
+- **Button**: `btn-primary` untuk tombol "Hubungi Kami"
+- **Text**: `text-center` untuk center heading dan CTA
+
+### Cara Implementasi
+1. Buat container dengan `col-lg-8 mx-auto` agar content center dan tidak terlalu lebar
+2. Buat heading utama "Frequently Asked Questions (FAQ)" dengan `text-center mb-5`
+3. Buat 5 kategori FAQ, masing-masing dengan heading `<h4>`:
+   - Pemesanan & Pembayaran
+   - Pengiriman
+   - Produk & Garansi
+   - Retur & Pengembalian
+   - Akun & Keamanan
+4. Untuk setiap FAQ, gunakan struktur:
+   ```html
+   <details class="mb-3">
+     <summary class="p-3 bg-light rounded" style="cursor: pointer;">
+       <strong>Pertanyaan?</strong>
+     </summary>
+     <div class="p-3 border border-top-0 rounded-bottom">
+       <p>Jawaban...</p>
+     </div>
+   </details>
+   ```
+5. Summary akan otomatis punya panah dropdown dari browser
+6. Konten dalam details akan muncul saat user klik summary
+7. Tambahkan CTA card di akhir dengan tombol link ke contact.html
+
+### Keuntungan Pakai `<details>`
+- Tidak perlu JavaScript untuk buka-tutup
+- Browser otomatis handle interaction
+- Lebih ringan dan simple daripada accordion Bootstrap
+
+---
+
+## Ringkasan Bootstrap yang Digunakan Jackie
+
+### Layout & Grid
+- **Container**: `container` (wrapper utama), `row` (baris), `col-md-*`, `col-lg-*` (kolom responsif)
+- **Centering**: `mx-auto` (margin kiri-kanan auto untuk center kolom)
+- **Grid gutter**: `g-4` untuk jarak antar kolom
+
+### Card Components
+- **Card**: `card`, `card-body`, `card-header` untuk kotak konten
+- **Height**: `h-100` untuk card tinggi penuh
+
+### Form Components
+- **Input**: `form-control` (styling input), `form-label` (label input)
+- **Checkbox/Radio**: `form-check`, `form-check-input`, `form-check-label`
+- **Inline**: `form-check-inline` untuk checkbox/radio horizontal
+
+### Button
+- **Style**: `btn-primary` (biru), `btn-outline-secondary` (border abu), `btn-success` (hijau)
+- **Size**: `btn-sm` (kecil), `btn-lg` (besar)
+- **Width**: `w-100` (lebar penuh)
+
+### List Group (untuk menu navigasi)
+- **Base**: `list-group`, `list-group-item`
+- **Interactive**: `list-group-item-action` (bisa diklik)
+- **Active**: `active` (highlight menu terpilih)
+
+### Badge & Label
+- **Badge**: `badge` dengan warna `bg-success`, `bg-danger`, `bg-warning`, `bg-info`
+- Custom: `status-success`, `status-info`, `status-warning` untuk status pesanan
+
+### Alert (kotak notifikasi)
+- **Base**: `alert` dengan varian `alert-success`, `alert-info`
+
+### Flexbox Utilities
+- **Display**: `d-flex` (aktifkan flexbox), `d-grid` (grid layout)
+- **Alignment**: `justify-content-between` (space between), `justify-content-center` (center)
+- **Items**: `align-items-center` (vertical center)
+- **Gap**: `gap-2`, `gap-3` (jarak antar flex items)
+
+### Text Utilities
+- **Align**: `text-center` (center), `text-end` (kanan)
+- **Color**: `text-muted` (abu), `text-danger` (merah), `text-success` (hijau)
+- **Decoration**: `text-decoration-none` (hilangkan underline link)
+
+### Spacing (margin & padding)
+- **Margin**: `m-*`, `my-*` (atas-bawah), `mb-*` (bawah), `mt-*` (atas), `mx-*` (kiri-kanan)
+- **Padding**: `p-*`, `py-*`, `p-3`, `p-5`
+- Angka 0-5 untuk ukuran (0 = 0px, 1 = 0.25rem, 2 = 0.5rem, 3 = 1rem, 4 = 1.5rem, 5 = 3rem)
+
+### Border & Rounded
+- **Border**: `border`, `border-top-0`, `border-bottom`
+- **Rounded**: `rounded` (sudut melengkung), `rounded-circle` (bulat penuh untuk foto profil), `rounded-bottom`
+
+### Background Color
+- **Color**: `bg-white`, `bg-light`, `bg-primary`, `bg-success`
+
+### Image
+- **Responsive**: `img-fluid` (gambar auto resize sesuai layar)
+- **Shape**: `rounded-circle` (foto bulat)
+
+### Pagination
+- **Base**: `pagination`, `page-item`, `page-link`
+- Untuk navigasi halaman (Previous, 1, 2, 3, Next)
+
+### Position
+- **Type**: `position-relative`, `position-absolute`
+- **Fixed**: `sticky-top` untuk navbar tetap di atas saat scroll
+
+### Custom Classes (didefinisikan di style.css)
 - `auth-card`: Styling untuk centered login/register card
-- `hero-section`: Banner utama dengan background
+- `hero-section`: Banner homepage dengan background
 - `section-title`: Heading untuk section
 - `category-card`: Card kategori produk
 - `product-card`: Card produk dengan hover effect
-- `order-card`: Card untuk order item
-- `status-badge`: Badge status dengan variant (success/info/warning)
+- `order-card`: Card untuk item pesanan
+- `status-badge`: Badge status dengan varian warna
+
+### Cara Menggunakan Bootstrap
+1. **Include Bootstrap CSS** di `<head>`: Link CDN Bootstrap 5.3.0
+2. **Include Bootstrap JS** sebelum `</body>`: Script CDN Bootstrap bundle (untuk komponen interaktif)
+3. **Gunakan class** langsung di HTML: `<div class="container">`, `<button class="btn btn-primary">`, dll
+4. **Combine multiple classes**: `<div class="card shadow-sm mb-4 h-100">` (card + shadow + margin + height)
+5. **Responsive**: Gunakan breakpoint `col-sm-*`, `col-md-*`, `col-lg-*` untuk tampilan berbeda di layar berbeda
